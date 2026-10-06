@@ -1,0 +1,14 @@
+[Unit]
+Description=Server Health Monitoring application
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/server-health-monitor 
+ExecStart=/usr/bin/python3 /opt/server-health-monitor/app.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
